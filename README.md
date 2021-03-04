@@ -1,1 +1,1 @@
-ECE 362
+Switch to 'master' branch
