@@ -1,0 +1,6 @@
+18:40:02 **** Build of configuration Debug for project lab0 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+
+18:40:02 Build Finished (took 70ms)
+

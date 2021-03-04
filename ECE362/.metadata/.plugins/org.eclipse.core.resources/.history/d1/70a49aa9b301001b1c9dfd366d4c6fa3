@@ -1,0 +1,58 @@
+.cpu cortex-m0
+.thumb
+.syntax unified
+.fpu softvfp
+
+.global login
+login: .string "selvara2"
+hello_str: .string "Hello, %s!\n"
+.align 2
+.global hello
+hello:
+	push {lr}
+	ldr r2, =hello_str
+	ldr r0, [r2]
+	ldr r2, =login
+	ldr r1, [r2]
+	bl printf
+	pop  {pc}
+
+showmult2_str: .string "%d * %d = %d\n"
+.align 2
+.global showmult2
+showmult2:
+	push {r4, lr}
+	ldr r4, =showmult2_str
+	ldr r0, [r4]
+	pop  {r4, pc}
+
+// Add the rest of the subroutines here
+.global showmult3
+showmult3:
+	push {lr}
+
+	pop  {pc}
+
+.global listing
+listing:
+	push {lr}
+
+	pop  {pc}
+
+.global trivial
+trivial:
+	push {lr}
+
+	pop  {pc}
+
+.global reverse_puts
+reverse_puts:
+	push {lr}
+
+	pop  {pc}
+
+.global sumsq
+sumsq:
+	push {lr}
+
+	pop  {pc}

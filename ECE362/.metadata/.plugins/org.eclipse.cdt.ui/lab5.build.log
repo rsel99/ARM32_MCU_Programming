@@ -1,0 +1,23 @@
+16:09:24 **** Incremental Build of configuration Debug for project lab5 ****
+make -j11 all 
+Building file: ../src/main.s
+Invoking: MCU GCC Assembler
+/Users/raghuramselvaraj/Current Classes/ECE362/lab5/Debug
+arm-none-eabi-as -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -I"/Users/raghuramselvaraj/Current Classes/ECE362/lab5/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/lab5/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/lab5/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/lab5/CMSIS/core" -g -o "src/main.o" "../src/main.s"
+Finished building: ../src/main.s
+ 
+Building target: lab5.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/lab5/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "lab5.elf" @"objects.list" /Users/raghuramselvaraj/Current\ Classes/ECE362/lab5/src/autotest.o  -lm
+Finished building target: lab5.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "lab5.elf" "lab5.bin"
+arm-none-eabi-size "lab5.elf"
+   text	   data	    bss	    dec	    hex	filename
+  47920	   2516	   2128	  52564	   cd54	lab5.elf
+ 
+
+16:09:25 Build Finished (took 344ms)
+

@@ -1,0 +1,61 @@
+.cpu cortex-m0
+.thumb
+.syntax unified
+.fpu softvfp
+
+.text
+.global login
+login: .string "selvara2" // Make sure you put your login here.
+.align 2
+
+.data
+.align 4
+value:  .word 0
+source: .word 1, 2, 2, 4, 5, 9, 12, 8, 9, 10, 11
+.align 1
+str: 	.asciz "HELLO, 01234 WorlD! 56789+-"
+
+.global main
+main:
+    //bl autotest
+    bl intsub
+    bl charsub
+    bkpt
+
+intsub:
+	push {r4-r7, lr}
+	for1:
+		movs r0, #0							// i
+	check1:
+		cmp r0, #10
+		bge endfor1
+	body1:
+		if1:
+			movs r1, #2
+			ands r1, r0
+			cmp r1, #2
+			bne else1
+		then1:
+			ldr r1, =value
+			ldr r2, [r1]					// value
+
+			ldr r1, =source
+			movs r5, #4
+			muls r5, r0
+			ldr r3, [r1, r5]				// source[i]
+
+			adds r5, #4
+			ldr r4, [r1, r5]				// source[i+1]
+
+			subs r4, r3						// source[i+1] - source[i]
+			adds r2, r4						// value + source[i+1] - source[i]
+
+			str r2, [r1]
+		else1:
+
+		endif1:
+	next1:
+	endfor1:
+		pop {r4-r7, pc}
+
+charsub:

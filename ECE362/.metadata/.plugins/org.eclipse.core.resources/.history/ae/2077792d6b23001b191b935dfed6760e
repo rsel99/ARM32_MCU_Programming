@@ -1,0 +1,137 @@
+//============================================================================
+// ECE 362 lab experiment 9 -- I2C
+//============================================================================
+
+#include "stm32f0xx.h"
+#include <stdint.h> // for uint8_t
+#include <string.h> // for strlen() and strcmp()
+
+// Be sure to change this to your login...
+const char login[] = "xyz";
+
+//============================================================================
+// Wait for n nanoseconds. (Maximum: 4.294 seconds)
+//============================================================================
+void nano_wait(unsigned int n) {
+    asm(    "        mov r0,%0\n"
+            "repeat: sub r0,#83\n"
+            "        bgt repeat\n" : : "r"(n) : "r0", "cc");
+}
+
+// Write your subroutines below...
+void setup_i2c() {
+
+}
+
+void i2c_waitidle() {
+
+}
+
+void i2c_start() {
+
+}
+
+void i2c_stop() {
+
+}
+
+void i2c_senddata() {
+
+}
+
+void i2c_recvdata() {
+
+}
+
+void i2c_set_iodir(int n) {
+
+}
+
+void i2c_set_gpio(int n) {
+
+}
+
+int i2c_get_gpio() {
+    return 0;
+}
+
+void i2c_write_flash(int n, const char * s, int len) {
+
+}
+
+int i2c_write_flash_complete() {
+    return 0;
+}
+
+
+void internal_clock();
+void demo();
+void autotest();
+
+int main(void)
+{
+    //internal_clock();
+    demo();
+    //autotest();
+
+    setup_i2c();
+    //i2c_test();
+
+    i2c_set_iodir(0xf0); //  upper 4 bits input / lower 4 bits output
+
+    // Show the happy LEDs for 4 seconds.
+    for(int i=0; i<10; i++) {
+        for(int n=1; n <= 8; n <<= 1) {
+            i2c_set_gpio(n);
+            int value = i2c_get_gpio();
+            if ((value & 0xf) != n)
+                break;
+            nano_wait(100000000); // 0.1 s
+        }
+    }
+
+    const char string[] = "This is a test.";
+    int len = strlen(string) + 1;
+    i2c_write_flash(0x200, string, len);
+
+    int count = 0;
+    while(1) {
+        if (i2c_write_flash_complete())
+            break;
+        count++;
+    }
+
+    if (count == 0) {
+        // It could not have completed immediately.
+        // i2c_write_flash_complete() does not work.  Show slow angry LEDs.
+        int all = 0xf;
+        for(;;) {
+            i2c_set_gpio(all);
+            all ^= 0xf;
+            nano_wait(500000000);
+        }
+    }
+
+    char readback[100];
+    i2c_read_flash(0x200, readback, len);
+    if (strcmp(string,readback) == 0) {
+        // String comparison matched.  Show the happy LEDs.
+        for(;;) {
+            for(int n=1; n <= 8; n <<= 1) {
+                i2c_set_gpio(n);
+                int value = i2c_get_gpio();
+                if ((value & 0xf) != n)
+                    break;
+                nano_wait(100000000); // 0.1 s
+            }
+        }
+    } else {
+        // String comparison failed.  Show the angry LEDs.
+        int all = 0xf;
+        for(;;) {
+            i2c_set_gpio(all);
+            all ^= 0xf;
+            nano_wait(100000000);
+        }
+    }
+}

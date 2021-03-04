@@ -1,0 +1,6 @@
+23:29:04 **** Incremental Build of configuration Debug for project prelab6 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+
+23:29:05 Build Finished (took 982ms)
+

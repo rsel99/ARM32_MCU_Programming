@@ -1,0 +1,511 @@
+14:02:45 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:50:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:50:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:50:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28880	   2492	   1160	  32532	   7f14	practical2.elf
+ 
+14:02:47 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:03:05 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:03:57 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:04:19 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:04:49 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:05:28 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:05:58 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:24:38 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:117:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:117:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:117:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/main.c:113:13: warning: unused variable 'cols' [-Wunused-variable]
+         int cols = get_cols();
+             ^~~~
+../src/main.c: In function 'main':
+../src/main.c:163:5: warning: implicit declaration of function 'setup_ports'; did you mean 'setup_tim14'? [-Wimplicit-function-declaration]
+     setup_ports();
+     ^~~~~~~~~~~
+     setup_tim14
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+src/main.o: In function `main':
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug/../src/main.c:163: undefined reference to `setup_ports'
+collect2: error: ld returned 1 exit status
+make: *** [practical2.elf] Error 1
+14:24:56 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:117:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:117:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:117:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/main.c:113:13: warning: unused variable 'cols' [-Wunused-variable]
+         int cols = get_cols();
+             ^~~~
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28920	   2492	   1160	  32572	   7f3c	practical2.elf
+ 
+14:25:36 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:25:55 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:30:18 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:118:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:118:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:118:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/main.c:112:9: warning: unused variable 'cols' [-Wunused-variable]
+     int cols = get_cols();
+         ^~~~
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28976	   2492	   1200	  32668	   7f9c	practical2.elf
+ 
+14:33:02 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:118:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:118:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:118:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/main.c:126:14: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+     if (cols & 1 == 1) {
+              ^
+../src/main.c:130:14: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+     if (cols & 2 == 2) {
+              ^
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  29000	   2492	   1200	  32692	   7fb4	practical2.elf
+ 
+14:33:36 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:118:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:118:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:118:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  29000	   2492	   1200	  32692	   7fb4	practical2.elf
+ 
+14:37:35 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:118:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:118:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:118:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28980	   2492	   1160	  32632	   7f78	practical2.elf
+ 
+14:43:37 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:70:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:70:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:70:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28980	   2492	   1160	  32632	   7f78	practical2.elf
+ 
+14:48:42 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:70:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:70:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:70:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/main.c: In function 'main':
+../src/main.c:116:1: error: unknown type name 'wave'
+ wave    enable_ports();
+ ^~~~
+../src/main.c:116:9: error: conflicting types for 'enable_ports'
+ wave    enable_ports();
+         ^~~~~~~~~~~~
+../src/main.c:97:6: note: previous definition of 'enable_ports' was here
+ void enable_ports() {
+      ^~~~~~~~~~~~
+make: *** [src/main.o] Error 1
+14:48:54 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:70:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:70:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:70:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28980	   2492	   1160	  32632	   7f78	practical2.elf
+ 
+14:51:12 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:51:35 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:53:10 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:54:04 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+14:58:12 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:70:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:70:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:70:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28980	   2492	   1160	  32632	   7f78	practical2.elf
+ 
+14:59:55 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:01:12 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:69:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:69:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:69:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28980	   2492	   1160	  32632	   7f78	practical2.elf
+ 
+15:01:36 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:02:10 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:03:13 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:03:25 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:04:25 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:69:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:69:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:69:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28980	   2492	   1160	  32632	   7f78	practical2.elf
+ 
+15:09:00 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:69:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:69:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:69:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28980	   2492	   1160	  32632	   7f78	practical2.elf
+ 
+15:10:22 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:10:43 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:11:13 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:15:15 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:69:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:69:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:69:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  28988	   2492	   1160	  32640	   7f80	practical2.elf
+ 
+15:15:34 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:16:32 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:16:42 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+make: Nothing to be done for `all'.
+15:23:04 **** Incremental Build of configuration Debug for project practical2 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/practical2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'spi_init_oled':
+../src/main.c:25:5: warning: implicit declaration of function 'spi_cmd' [-Wimplicit-function-declaration]
+     spi_cmd(0x38);
+     ^~~~~~~
+../src/main.c: At top level:
+../src/main.c:68:6: warning: conflicting types for 'spi_cmd'
+ void spi_cmd (int n) {
+      ^~~~~~~
+../src/main.c:25:5: note: previous implicit declaration of 'spi_cmd' was here
+     spi_cmd(0x38);
+     ^~~~~~~
+../src/main.c: In function 'TIM14_IRQHandler':
+../src/main.c:86:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(buffer, "%08d", counter);
+         ^~~~~~~
+../src/main.c:86:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:86:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+Finished building: ../src/main.c
+ 
+Building target: practical2.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/practical2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "practical2.elf" @"objects.list"   -lm
+Finished building target: practical2.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "practical2.elf" "practical2.bin"
+arm-none-eabi-size "practical2.elf"
+   text	   data	    bss	    dec	    hex	filename
+  29088	   2492	   1160	  32740	   7fe4	practical2.elf
+ 

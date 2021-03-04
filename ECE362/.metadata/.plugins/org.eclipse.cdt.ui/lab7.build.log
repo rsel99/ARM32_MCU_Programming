@@ -1,0 +1,27 @@
+11:04:28 **** Incremental Build of configuration Debug for project lab7 ****
+make -j11 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/raghuramselvaraj/Current Classes/ECE362/lab7/Debug
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -DSTM32 -DSTM32F0 -DSTM32F091RCTx -DDEBUG -DSTM32F091 -DUSE_STDPERIPH_DRIVER -I"/Users/raghuramselvaraj/Current Classes/ECE362/lab7/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/lab7/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/lab7/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/lab7/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'shift':
+../src/main.c:395:22: warning: array subscript has type 'char' [-Wchar-subscripts]
+     display[7] = font[c];
+                      ^
+Finished building: ../src/main.c
+ 
+Building target: lab7.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/lab7/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "lab7.elf" @"objects.list" /Users/raghuramselvaraj/Current\ Classes/ECE362/lab7/src/autotest.o  -lm
+Finished building target: lab7.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "lab7.elf" "lab7.bin"
+arm-none-eabi-size "lab7.elf"
+   text	   data	    bss	    dec	    hex	filename
+  63836	   2492	   4824	  71152	  115f0	lab7.elf
+ 
+
+11:04:29 Build Finished (took 411ms)
+

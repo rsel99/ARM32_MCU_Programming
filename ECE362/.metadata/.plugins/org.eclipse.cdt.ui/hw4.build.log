@@ -1,0 +1,23 @@
+20:06:41 **** Incremental Build of configuration Debug for project hw4 ****
+make -j11 all 
+Building file: ../src/hw4.s
+Invoking: MCU GCC Assembler
+/Users/raghuramselvaraj/Current Classes/ECE362/hw4/Debug
+arm-none-eabi-as -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -I"/Users/raghuramselvaraj/Current Classes/ECE362/hw4/StdPeriph_Driver/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/hw4/inc" -I"/Users/raghuramselvaraj/Current Classes/ECE362/hw4/CMSIS/device" -I"/Users/raghuramselvaraj/Current Classes/ECE362/hw4/CMSIS/core" -g -o "src/hw4.o" "../src/hw4.s"
+Finished building: ../src/hw4.s
+ 
+Building target: hw4.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m0 -mthumb -mfloat-abi=soft -T"/Users/raghuramselvaraj/Current Classes/ECE362/hw4/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "hw4.elf" @"objects.list"   -lm
+Finished building target: hw4.elf
+ 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "hw4.elf" "hw4.bin"
+arm-none-eabi-size "hw4.elf"
+   text	   data	    bss	    dec	    hex	filename
+  60584	   2532	   1152	  64268	   fb0c	hw4.elf
+ 
+
+20:06:41 Build Finished (took 243ms)
+

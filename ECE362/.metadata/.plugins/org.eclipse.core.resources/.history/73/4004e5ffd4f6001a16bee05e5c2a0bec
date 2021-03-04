@@ -1,0 +1,16 @@
+.cpu cortex-m0
+.thumb
+.syntax unified
+.fpu softvfp
+
+.text
+.global login
+login: .string "selvara2" // Make sure you put your login here.
+.align 2
+
+.global main
+main:
+    //bl autotest
+    bl intsub
+    bl charsub
+    bkpt

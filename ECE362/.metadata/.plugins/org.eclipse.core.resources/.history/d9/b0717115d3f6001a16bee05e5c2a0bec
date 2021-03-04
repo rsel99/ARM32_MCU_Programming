@@ -1,0 +1,19 @@
+.cpu cortex-m0
+.thumb
+.syntax unified
+.fpu softvfp
+.text
+.global main
+main:
+    ldr  r1, =array
+    ldr  r0,[r1]
+    adds r0,#1
+    str  r0,[r1]
+    ldr  r0,[r1,#4]
+    adds r0,#2
+    str  r0,[r1,#4]
+    bkpt
+.data
+array:
+    .word 0
+    .word 0

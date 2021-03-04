@@ -1,0 +1,24 @@
+.cpu cortex-m0
+.thumb
+.syntax unified
+.fpu softvfp
+
+.global login
+login: .string "xyz"
+hello_str: .string "Hello, %s!\n"
+.align 2
+.global hello
+hello:
+	push {lr}
+
+	pop  {pc}
+
+showmult2_str: .string "%d * %d = %d\n"
+.align 2
+.global showmult2
+showmult2:
+	push {lr}
+
+	pop  {pc}
+
+// Add the rest of the subroutines here

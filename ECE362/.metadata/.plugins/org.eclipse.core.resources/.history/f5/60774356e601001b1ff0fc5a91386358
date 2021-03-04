@@ -1,0 +1,248 @@
+.cpu cortex-m0
+.thumb
+.syntax unified
+.fpu softvfp
+
+.global login
+login: .string "selvara2"
+hello_str: .string "Hello, %s!\n"
+.align 2
+.global hello
+hello:
+	push {lr}
+	ldr r0, =hello_str
+	ldr r1, =login
+	bl printf
+	pop  {pc}
+
+showmult2_str: .string "%d * %d = %d\n"
+.align 2
+.global showmult2
+showmult2:
+	push {r4-r7, lr}
+	movs r4, r0
+	movs r5, r1
+	movs r6, r4
+	muls r6, r5
+
+	ldr r0, =showmult2_str
+	movs r1, r4
+	movs r2, r5
+	movs r3, r6
+
+	bl printf
+	pop  {r4-r7, pc}
+
+// Add the rest of the subroutines here
+showmult3_str: .string "%d * %d * %d = %d\n"
+.align 2
+.global showmult3
+showmult3:
+	push {r4-r7, lr}
+	movs r4, r0
+	movs r5, r1
+	movs r6, r2
+	movs r7, r4
+	muls r7, r5
+	muls r7, r6
+
+	ldr r0, =showmult3_str
+	movs r1, r4
+	movs r2, r5
+	movs r3, r6
+
+	sub sp, #4
+	str r7, [sp, #0]
+	bl printf
+	add sp, #4
+	pop  {r4-r7, pc}
+
+listing_str: .string "%s %05d %s %d students in %s, %d\n"
+.align 2
+.global listing
+listing:
+
+	push {r4-r7, lr}
+
+	movs r4, r0
+	movs r5, r1
+	movs r6, r2
+	movs r7, r3
+
+	ldr r0, =listing_str
+	movs r1, r4
+	movs r2, r5
+	movs r3, r6
+
+	ldr r4, [sp, #20]
+	ldr r5, [sp, #24]
+
+	sub sp, #4
+	str r5, [sp, #0]
+
+	sub  sp, #4
+	str r4, [sp, #0]
+
+	sub sp, #4
+	str r7, [sp, #0]
+
+	bl printf
+	add sp, #12
+	pop  {r4-r7, pc}
+
+.global trivial
+trivial:
+	push {lr}
+	sub sp, #400
+	mov r3, sp
+	for1:
+		movs r1, #0
+	check1:
+		cmp r1, #100
+		bge endfor1
+	body1:
+		lsls r2, r1, #2
+		adds r1, #1
+		str r1, [r3, r2]
+	next1:
+		b check1
+	endfor1:
+
+	if1:
+		cmp r0, #100
+		bhi then1
+		beq then1
+		b endif1
+	then1:
+		movs r0, #99
+	endif1:
+	movs r1, r0
+	lsls r1, r1, #2
+	ldr r0, [r3, r1]
+	add sp, #400
+	pop  {pc}
+
+.global reverse_puts
+reverse_puts:
+	push {r4-r7, lr}
+	movs r4, r0						// s
+	bl strlen						// r0 = len
+	movs r1, #4						// newlen
+	adds r1, r0
+	movs r2, #3
+	mvns r2, r2
+	ands r1, r2
+
+	mov r2, sp						// sp
+	subs r2, r1
+	mov sp, r2
+	movs r3, #0
+
+	strb r3, [r2, r0]
+
+	for2:
+		movs r3, #0					// x
+	check2:
+		cmp r3, r0
+		bhi endfor2
+		beq endfor2
+	body2:
+		ldrb r5, [r4, r3]
+		movs r6, r0
+		subs r6, #1
+		subs r6, r3
+		strb r5, [r2, r6]
+	next2:
+		adds r3, #1
+		b check2
+	endfor2:
+	movs r0, r2
+	movs r4, r2
+	movs r5, r1
+	bl puts
+
+	adds r4, r5
+	mov sp, r4
+	pop  {r4-r7, pc}
+
+.global sumsq
+sumsq:
+	push {r4-r7, lr}
+	sub sp, #400
+	mov r2, sp
+	if2:
+		cmp r0, #100
+		bmi alt1
+		bhi then2
+		beq then2
+		alt1:
+		bge then2
+		b endif2
+	then2:
+		movs r0, #99
+	endif2:
+
+	if3:
+		cmp r1, #100
+		bmi alt2
+		bhi then3
+		beq then3
+		alt2:
+		bge then3
+		b endif3
+	then3:
+		movs r1, #99
+	endif3:
+
+	movs r3, #1
+
+	if4:
+		cmp r0, r1
+		bne else4
+	then4:
+		movs r3, #0
+		b endif4
+	else4:
+		cmp r0, r1
+		bmi alt3
+		bls endif4
+		alt3:
+		ble endif4
+	elseif4:
+		ldr r3, =0xFFFFFFFF
+	endif4:
+
+	for3:
+		movs r4, #0
+	check3:
+		cmp r4, #100
+		bge endfor3
+	body3:
+		movs r5, r4
+		muls r5, r4
+		lsls r6, r4, #2
+		str r5, [r2, r6]
+	next3:
+		adds r4, #1
+	endfor3:
+
+	movs r6, #0
+	for4:
+		movs r4, r0
+	body4:
+		lsls r7, r4, #2
+		ldr r5, [r2, r7]
+		adds r6, r5
+		if5:
+			cmp r4, r1
+			bne endif5
+		then5:
+			movs r0, r6
+			b endfor4
+		endif5:
+	next4:
+		adds r4, r3
+	endfor4:
+
+	add sp, #400
+	pop  {r4-r7, pc}
